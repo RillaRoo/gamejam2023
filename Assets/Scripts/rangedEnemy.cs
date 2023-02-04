@@ -20,7 +20,6 @@ public class rangedEnemy : MonoBehaviour
 	void Update()
 	{
 		Vector2 dir = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
-
 		transform.up = dir; //enemy looks to player 
 
 		if (shootCd <= 0)
