@@ -8,6 +8,7 @@ public class BombBehaviour : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField]  float speed=15f;
+    [SerializeField] ParticleSystem psemi;
     void Start()
     {
         PlayerBottom mole = GameObject.FindGameObjectWithTag("Mole").GetComponent<PlayerBottom>();
@@ -25,9 +26,17 @@ public class BombBehaviour : MonoBehaviour
     {
         if (collision.tag == "Cimento")
         {
+            rb2d.velocity = Vector2.zero;
+            rb2d.isKinematic = true;
             anim.SetTrigger("Explode");
-            Debug.Log(collision.gameObject.GetComponent<ConcreteBehaviour>().anim);
+            psemi.Emit(1);
+            Invoke("Destroy", 0.5f);
             collision.gameObject.GetComponent<ConcreteBehaviour>().anim.SetTrigger("Destroy");
         }
+    }
+
+    private void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
