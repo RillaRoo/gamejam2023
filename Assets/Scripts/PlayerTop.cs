@@ -12,6 +12,9 @@ public class PlayerTop : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bomb;
+    [SerializeField] GameObject bullet;
+    [SerializeField] GameObject arvoreBasica;
+    [SerializeField] GameObject arvoreSemiBasic;
     [SerializeField] SpriteRenderer moleSprite;
     public int bombAmount = 0;
     public float dir;
@@ -63,18 +66,36 @@ public class PlayerTop : MonoBehaviour
         animator.SetFloat("VerticalLook", inputY);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             //animator.SetTrigger("Swing");
             GameObject bombproj = Instantiate(bomb, firePoint.position, Quaternion.identity);
             Debug.Log(transform.position);
             Debug.Log(dir);
             // enemy.GetComponent<EnemyBehaviour>().BeginPatrol();
-        }
+        }*/
         lastPos = transform.position;
         if (dir != 0) lastDir = dir;
 
     }
+    public void Shoot(SurfaceTrees treeType)
+    {
+        switch (treeType)
+        {
+            case SurfaceTrees.Bomb:
 
+                Instantiate(bomb, firePoint.position, Quaternion.identity);
+                break;
+            case SurfaceTrees.Shot:
+                Instantiate(bullet, firePoint.position, Quaternion.identity);
+                break;
+            case SurfaceTrees.Basic:
+                Instantiate(arvoreBasica, firePoint.position, Quaternion.identity);
+                break;
+            case SurfaceTrees.SemiBasic:
+                Instantiate(arvoreSemiBasic, firePoint.position, Quaternion.identity);
+                break;
+        }
+    }
 
 }

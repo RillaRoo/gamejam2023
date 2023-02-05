@@ -3,6 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum SurfaceTrees
+{
+	Shot,
+	Basic,
+	SemiBasic,
+	Bomb,
+	Test1,
+	Test2
+}
+public enum UndergroundTrees
+{
+	Shot,
+	Bomb,
+	Test1,
+	Test2,
+	Test3,
+	Test4
+}
 public class slots : MonoBehaviour
 {
 	public GameObject[] inferior;
@@ -11,12 +29,20 @@ public class slots : MonoBehaviour
 	[SerializeField] Image selectorUp;
 	int currentSlotDown = 0;
 	int currentSlotUp = 0;
-	int number = 0;
+	
 
 	private void Start()
 	{
 		SelectSeedDown(0);
 		SelectSeedUp(0);
+        for (int i = 0; i < inferior.Length; i++)
+        {
+			inferior[i].GetComponent<BulbManager>().SeedAmount = inferior[i].GetComponent<BulbManager>().originalSeedAmount;
+		}
+		for (int i = 0; i < superior.Length; i++)
+		{
+			superior[i].GetComponent<BulbManager>().SeedAmount = superior[i].GetComponent<BulbManager>().originalSeedAmount;
+		}
 	}
 	void Update()
 	{
@@ -70,17 +96,26 @@ public class slots : MonoBehaviour
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.RightShift))
 		{
-			InventoryManager.Instance.plantInventoryAmountB[currentSlotDown]--;
-			inferior[currentSlotDown].transform.GetChild(1).GetComponent<Text>().text =
-				InventoryManager.Instance.plantInventoryAmountB[currentSlotDown].ToString();
+            if (inferior[currentSlotDown].GetComponent<BulbManager>().SeedAmount > 0)
+            {
+				InventoryManager.Instance.playerB.Shoot(inferior[currentSlotDown].GetComponent<BulbManager>().UndergroundType);
+				inferior[currentSlotDown].GetComponent<BulbManager>().SeedAmount--;
+				inferior[currentSlotDown].transform.GetChild(1).GetComponent<Text>().text =
+				inferior[currentSlotDown].GetComponent<BulbManager>().SeedAmount.ToString();
+			}
 		}
-		if (Input.GetKeyUp(KeyCode.KeypadEnter))
+			
+		if (Input.GetKeyUp(KeyCode.Space))
 		{
-			InventoryManager.Instance.plantInventoryAmountT[currentSlotUp]--;
-			superior[currentSlotUp].transform.GetChild(1).GetComponent<Text>().text =
-				InventoryManager.Instance.plantInventoryAmountT[currentSlotUp].ToString();
+			if (superior[currentSlotUp].GetComponent<BulbManager>().SeedAmount > 0)
+			{
+				InventoryManager.Instance.playerT.Shoot(superior[currentSlotUp].GetComponent<BulbManager>().surfaceType);
+				superior[currentSlotUp].GetComponent<BulbManager>().SeedAmount--;
+				superior[currentSlotUp].transform.GetChild(1).GetComponent<Text>().text =
+				superior[currentSlotUp].GetComponent<BulbManager>().SeedAmount.ToString();
+			}
 		}
 	}
 	public void SelectSeedDown(int currentseed)

@@ -6,11 +6,19 @@ TagManager:
   tags:
   - Piece
   - PuzzleManager
+  - Areia
+  - Cimento
+  - Cat
+  - Ant
+  - Mole
+  - Tronco
+  - SurfaceGround
+  - Sapling
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pieces
   - Water
   - UI
   - 

@@ -10,6 +10,7 @@ public class PlayerBottom : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject bomb;
+    [SerializeField] GameObject bullet;
     [SerializeField] SpriteRenderer moleSprite;
     public int bombAmount = 0;
     public float dir;
@@ -60,18 +61,25 @@ public class PlayerBottom : MonoBehaviour
         animator.SetFloat("VerticalLook", alternateInputY);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //animator.SetTrigger("Swing");
-            GameObject bombproj = Instantiate(bomb, firePoint.position, Quaternion.identity);
-            Debug.Log(transform.position);
-            Debug.Log(dir);
-            // enemy.GetComponent<EnemyBehaviour>().BeginPatrol();
-        }
+
         lastPos = transform.position;
-        if(dir!=0)lastDir = dir;
+        if (dir != 0) lastDir = dir;
 
     }
-   
-    
+
+    public void Shoot(UndergroundTrees treeType)
+    {
+        switch (treeType)
+        {
+            case UndergroundTrees.Bomb:
+
+                Instantiate(bomb, firePoint.position, Quaternion.identity);
+                break;
+            case UndergroundTrees.Shot:
+                Instantiate(bullet, firePoint.position, Quaternion.identity);
+                break;
+        }
+    }
 }
+
+

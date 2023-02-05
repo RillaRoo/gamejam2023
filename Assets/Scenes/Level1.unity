@@ -207,6 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53421483}
+  - component: {fileID: 53421484}
   m_Layer: 5
   m_Name: Bolbo5
   m_TagString: Untagged
@@ -235,6 +236,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &53421484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53421482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 5
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &80797467
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +310,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f6ce966d721341d41b3f6462a6e6ac24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -728,7 +746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f6ce966d721341d41b3f6462a6e6ac24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1176,6 +1194,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8834082399408787598, guid: 2c1cb9fa1fe5ffc4cac7c0cea5fc0aa0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834082399408787598, guid: 2c1cb9fa1fe5ffc4cac7c0cea5fc0aa0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8834082399489831654, guid: 2c1cb9fa1fe5ffc4cac7c0cea5fc0aa0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1486,6 +1512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529955306}
+  - component: {fileID: 529955307}
   m_Layer: 5
   m_Name: Bolbo2
   m_TagString: Untagged
@@ -1514,6 +1541,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &529955307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529955305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 2
+  UndergroundType: 0
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &597486571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1696,170 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626421986}
   m_CullTransparentMesh: 1
+--- !u!1 &699987767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699987769}
+  - component: {fileID: 699987768}
+  m_Layer: 0
+  m_Name: Underbround_Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &699987768
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699987767}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 774375f8388c47e4f9fec572a39a1c63, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &699987769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699987767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.4781, z: 0}
+  m_LocalScale: {x: 1, y: 0.5411, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &738790492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738790494}
+  - component: {fileID: 738790493}
+  m_Layer: 0
+  m_Name: Superficie_Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &738790493
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738790492}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: ceac55f3adc0e8049bcbd950a792aef1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.81}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &738790494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738790492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.956, z: 0}
+  m_LocalScale: {x: 1, y: 0.4531, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &801552676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5f62565d53603d5488eceb41f2e9ac7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2219,6 +2427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1143632804}
+  - component: {fileID: 1143632805}
   m_Layer: 5
   m_Name: 'Bolbo0 '
   m_TagString: Untagged
@@ -2247,6 +2456,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1143632805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143632803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 1
+  originalSeedAmount: 10
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1182380088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,6 +2591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1260848738}
+  - component: {fileID: 1260848739}
   m_Layer: 5
   m_Name: Bolbo3
   m_TagString: Untagged
@@ -2393,6 +2620,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1260848739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260848737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 3
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1276520531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2760,7 @@ GameObject:
   - component: {fileID: 1282613485}
   - component: {fileID: 1282613482}
   - component: {fileID: 1282613487}
+  - component: {fileID: 1282613488}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Cat
@@ -2538,7 +2783,10 @@ MonoBehaviour:
   rb2d: {fileID: 1282613486}
   animator: {fileID: 1282613487}
   firePoint: {fileID: 1182380089}
-  bomb: {fileID: 0}
+  bomb: {fileID: 8016208182923781823, guid: bec15914f15945c4783a1aeb3f6f8d8a, type: 3}
+  bullet: {fileID: 8157972056206947903, guid: c3b71d79159b3d5449234f1a9057513a, type: 3}
+  arvoreBasica: {fileID: 8825416312986053735, guid: 7315a34cf548b764492719b4510e899c, type: 3}
+  arvoreSemiBasic: {fileID: 0}
   moleSprite: {fileID: 0}
   bombAmount: 0
   dir: 0
@@ -2621,7 +2869,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04366541, y: 0.043664932}
+  m_Offset: {x: 0.04366541, y: -0.37169123}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2632,7 +2880,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9606295, y: 3.3579082}
+  m_Size: {x: 1.9606295, y: 2.527196}
   m_EdgeRadius: 0
 --- !u!50 &1282613486
 Rigidbody2D:
@@ -2674,6 +2922,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1282613488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282613481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968e617350339e64b8b4aa418af9f22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 1282613486}
+  arvore: {fileID: 3698552855978343224, guid: ef6eb0c8baefd324ab9d938af9bee112, type: 3}
+  bullet: {fileID: 0}
+  firePoint: {fileID: 0}
+  firepointUp: {fileID: 0}
+  firepointDown: {fileID: 0}
+  playerbottom: {fileID: 1981759655}
+  canClimb: 0
 --- !u!1 &1290324200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +3096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1305676360}
+  - component: {fileID: 1305676361}
   m_Layer: 5
   m_Name: Bolbo1
   m_TagString: Untagged
@@ -2856,6 +3125,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1305676361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305676359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 1
+  UndergroundType: 0
+  originalSeedAmount: 5
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1320191055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,6 +3151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1320191056}
+  - component: {fileID: 1320191057}
   m_Layer: 5
   m_Name: Bolbo0
   m_TagString: Untagged
@@ -2893,6 +3180,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1320191057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320191055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 0
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1327284683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,6 +3327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefcf67be1ebd7841b37deef3c261dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerB: {fileID: 0}
+  playerT: {fileID: 0}
   plantInventoryAmountB: 000000000000000000000000000000000000000000000000
   plantInventoryAmountT: 000000000000000000000000000000000000000000000000
 --- !u!4 &1347000618
@@ -3048,6 +3354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474097814}
+  - component: {fileID: 1474097815}
   m_Layer: 5
   m_Name: Bolbo3
   m_TagString: Untagged
@@ -3076,6 +3383,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1474097815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474097813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 3
+  UndergroundType: 0
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1504398719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,7 +3532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d75ac831846072842817d92daca22fc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3385,6 +3709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593869020}
+  - component: {fileID: 1593869021}
   m_Layer: 5
   m_Name: Bolbo4
   m_TagString: Untagged
@@ -3413,6 +3738,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1593869021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593869019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 4
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1656362731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,7 +3812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e9f9a055ac68f764daa5433f6674caa1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3594,6 +3936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1715723714}
+  - component: {fileID: 1715723715}
   m_Layer: 5
   m_Name: Bolbo5
   m_TagString: Untagged
@@ -3622,6 +3965,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1715723715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715723713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 5
+  UndergroundType: 0
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &1722917051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +4333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 81bfb77b87222324ca750b26adf8854d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4464,6 +4824,7 @@ MonoBehaviour:
   animator: {fileID: 1981759649}
   firePoint: {fileID: 1732481105}
   bomb: {fileID: 8016208182923781823, guid: bec15914f15945c4783a1aeb3f6f8d8a, type: 3}
+  bullet: {fileID: 8157972056206947903, guid: c3b71d79159b3d5449234f1a9057513a, type: 3}
   moleSprite: {fileID: 0}
   bombAmount: 0
   dir: -1
@@ -4476,6 +4837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986766080}
+  - component: {fileID: 1986766081}
   m_Layer: 5
   m_Name: Bolbo4
   m_TagString: Untagged
@@ -4504,6 +4866,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1986766081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986766079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 4
+  UndergroundType: 0
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &2008937878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4513,6 +4892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2008937879}
+  - component: {fileID: 2008937880}
   m_Layer: 5
   m_Name: Bolbo2
   m_TagString: Untagged
@@ -4541,6 +4921,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2008937880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008937878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 2
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &2058901412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4708,6 +5105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094223735}
+  - component: {fileID: 2094223736}
   m_Layer: 5
   m_Name: Bolbo0
   m_TagString: Untagged
@@ -4736,6 +5134,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2094223736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094223734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03df56bf6b9c4d740af184b3357179d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  surfaceType: 0
+  UndergroundType: 0
+  originalSeedAmount: 0
+  isAvailable: 0
+  SeedAmount: 0
 --- !u!1 &2133592468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,7 +5164,7 @@ GameObject:
   - component: {fileID: 2133592469}
   m_Layer: 0
   m_Name: Surface
-  m_TagString: Untagged
+  m_TagString: SurfaceGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4819,9 +5234,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.754717, g: 0.2706165, b: 0.12388747, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

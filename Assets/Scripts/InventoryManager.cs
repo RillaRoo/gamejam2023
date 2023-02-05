@@ -5,11 +5,12 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance { get; private set; }
-    private PlayerBottom playerB;
-    private PlayerTop playerT;
+    public PlayerBottom playerB;
+    public PlayerTop playerT;
 
    public int[] plantInventoryAmountB = new int[6];
     public int[] plantInventoryAmountT = new int[6];
+
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class InventoryManager : MonoBehaviour
         {
             Instance = this;
         }
+        RelinkRefrences();
     }
 
 

@@ -96,11 +96,11 @@ public class GameManager : MonoBehaviour {
 		puzzle.pieces = new piece[puzzle.width, puzzle.height];
 
 		int[] auxValues = { 0, 0, 0, 0 };
-		float hIterator = 0;
-		float wIterator = 0;
+		float hIterator = transform.position.y;
+		float wIterator = transform.position.x;
 
 		for (int h = 0; h < puzzle.height; h++) {
-			wIterator = 0;
+			wIterator = transform.position.x;
 			for (int w = 0; w < puzzle.width; w++) {
 
 				
@@ -198,7 +198,15 @@ public class GameManager : MonoBehaviour {
 	public void Win()
 	{
 		Debug.Log("YouWin");
-		//canvas.SetActive (true);
+        foreach (GameObject var in GameObject.FindGameObjectsWithTag("Piece"))
+        {
+			Destroy(var);
+		}
+		GameObject.FindGameObjectWithTag("Sapling").GetComponent<Animator>().SetTrigger("Grow");
+		Destroy(GameObject.FindGameObjectWithTag("Bulb"));
+
+		Destroy(gameObject);
+		
 	}
 
 	public int QuickSweep(int w,int h)
