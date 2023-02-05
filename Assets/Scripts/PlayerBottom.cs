@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerBottom : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
-    private float speed = 250;
+    private float speed =150;
     private float alternateInput;
     private float alternateInputY;
     GameObject player;

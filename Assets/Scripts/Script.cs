@@ -9,17 +9,20 @@ public class Script : MonoBehaviour
     
     [SerializeField] Rigidbody2D rgd1;
     [SerializeField] GameObject arvore;
+    [SerializeField] GameObject arvoreVent;
     [SerializeField] Transform point;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform firePoint;
     [SerializeField] Transform firepointUp;
     [SerializeField] Transform firepointDown;
     [SerializeField] PlayerBottom playerbottom;
+    [SerializeField] Animator Manimator;
     float damage = -2;
     public  bool canClimb = false;
     float bulletSpeed = 50;
     bool flag = true;
     float lastDir = 1;
+    private float speed = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,12 +39,18 @@ public class Script : MonoBehaviour
         {
             GameObject arvore1 = Instantiate(arvore, point.position, Quaternion.identity);
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            GameObject arvore1 = Instantiate(arvoreVent, point.position, Quaternion.identity);
+        }
         if (Input.GetKey(KeyCode.P)&&canClimb)
         {
-
+            Manimator.SetTrigger("CLimb");
             //collision.gameObject.SetActive(false);
-            rgd1.velocity = new Vector2(rgd1.velocity.x, rgd1.velocity.y + 20 * Time.deltaTime);
+            //rgd1.velocity = new Vector2(rgd1.velocity.x, rgd1.velocity.y + 20 * Time.deltaTime);
+            rgd1.velocity = new Vector2(rgd1.velocity.x ,speed * Time.deltaTime);
         }
+        
         if (Input.GetKeyDown(KeyCode.Q) && Input.GetKey(KeyCode.UpArrow))
         {
             fireUp();
@@ -80,8 +89,15 @@ public class Script : MonoBehaviour
         }
         else
         {
+
             canClimb = false;
+            Manimator.SetTrigger("ClimbOff");
         }
+        if(collision.tag == "TroncoVent")
+        {
+            rgd1.velocity = new Vector2(rgd1.velocity.x, rgd1.velocity.y + 13 * Time.deltaTime);
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -89,6 +105,7 @@ public class Script : MonoBehaviour
         {
             canClimb = false;
         }
+        
         
     }
    
