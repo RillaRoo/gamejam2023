@@ -8,8 +8,8 @@ public class InventoryManager : MonoBehaviour
     private PlayerBottom playerB;
     private PlayerTop playerT;
 
-    int[] plantInventoryAmountB = new int[6];
-    int[] plantInventoryAmountT = new int[6];
+   public int[] plantInventoryAmountB = new int[6];
+    public int[] plantInventoryAmountT = new int[6];
 
     private void Awake()
     {
@@ -32,14 +32,14 @@ public class InventoryManager : MonoBehaviour
         playerT = GameObject.FindGameObjectWithTag("Cat").GetComponent<PlayerTop>();
     }
 
-    public void ChangeBombAmountBottom(int amount)
+    public void ChangeBombAmountBottom(int amount,int index)
     {
-        plantInventoryAmountB[0] += amount;
+        plantInventoryAmountB[index] += amount;
     }
 
-    public void ChangeBombAmountTop(int amount)
+    public void ChangeBombAmountTop(int amount, int index)
     {
-        plantInventoryAmountT[0] += amount;
+        plantInventoryAmountT[index] += amount;
     }
 
 }

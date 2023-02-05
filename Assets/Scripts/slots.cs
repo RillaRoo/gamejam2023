@@ -15,8 +15,8 @@ public class slots : MonoBehaviour
 
 	private void Start()
 	{
-		SelectSeedDown(1);
-		SelectSeedUp(1);
+		SelectSeedDown(0);
+		SelectSeedUp(0);
 	}
 	void Update()
 	{
@@ -72,11 +72,15 @@ public class slots : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			inferior[currentSlotDown].transform.GetChild(1).GetComponent<Text>().text = number--.ToString();
+			InventoryManager.Instance.plantInventoryAmountB[currentSlotDown]--;
+			inferior[currentSlotDown].transform.GetChild(1).GetComponent<Text>().text =
+				InventoryManager.Instance.plantInventoryAmountB[currentSlotDown].ToString();
 		}
 		if (Input.GetKeyUp(KeyCode.KeypadEnter))
 		{
-			superior[currentSlotUp].transform.GetChild(1).GetComponent<Text>().text = number--.ToString();
+			InventoryManager.Instance.plantInventoryAmountT[currentSlotUp]--;
+			superior[currentSlotUp].transform.GetChild(1).GetComponent<Text>().text =
+				InventoryManager.Instance.plantInventoryAmountT[currentSlotUp].ToString();
 		}
 	}
 	public void SelectSeedDown(int currentseed)
