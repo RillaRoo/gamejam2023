@@ -24,13 +24,6 @@ public class PlayerBottom : MonoBehaviour
     {
         characterScale = transform.localScale;
         characterScaleX = characterScale.x;
-        Application.targetFrameRate = 60;
-        if (GameObject.Find("Player") != null)
-        {
-
-
-            GameObject.Find("Player").GetComponent<Rigidbody2D>().position = new Vector2(0, 5);
-        }
 
     }
 

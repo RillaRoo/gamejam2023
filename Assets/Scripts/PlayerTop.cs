@@ -6,8 +6,8 @@ public class PlayerTop : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb2d;
     private float speed = 250;
-    private float alternateInput;
-    private float alternateInputY;
+    private float inpuX;
+    private float inputY;
     GameObject player;
     [SerializeField] Animator animator;
     [SerializeField] Transform firePoint;
@@ -26,13 +26,7 @@ public class PlayerTop : MonoBehaviour
     {
         characterScale = transform.localScale;
         characterScaleX = characterScale.x;
-        Application.targetFrameRate = 60;
-        if (GameObject.Find("Player") != null)
-        {
 
-
-            GameObject.Find("Player").GetComponent<Rigidbody2D>().position = new Vector2(0, 5);
-        }
 
     }
 
@@ -40,25 +34,25 @@ public class PlayerTop : MonoBehaviour
     void Update()
     {
 
-        alternateInput = Input.GetAxis("HorizontalPlayer2");
-        alternateInputY = Input.GetAxis("VerticalPlayer2");
+        inpuX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
 
-        if (alternateInput != 0)
+        if (inpuX != 0)
         {
             animator.SetBool("isWalking", true);
         }
         else animator.SetBool("isWalking", false);
 
-        rb2d.velocity = new Vector2(speed * Time.deltaTime * alternateInput, rb2d.velocity.y);
+        rb2d.velocity = new Vector2(speed * Time.deltaTime * inpuX, rb2d.velocity.y);
         if (lastPos != null && lastPos != transform.position)
         {
-            dir = Input.GetAxisRaw("HorizontalPlayer2");
+            dir = Input.GetAxisRaw("Horizontal");
 
-            if (Input.GetAxis("HorizontalPlayer2") < 0)
+            if (Input.GetAxis("Horizontal") < 0)
             {
                 characterScale.x = -characterScaleX;
             }
-            if (Input.GetAxis("HorizontalPlayer2") > 0)
+            if (Input.GetAxis("Horizontal") > 0)
             {
                 characterScale.x = characterScaleX;
             }
@@ -66,7 +60,7 @@ public class PlayerTop : MonoBehaviour
 
             //moleSprite.flipX= !moleSprite.flipX;
         }
-        animator.SetFloat("VerticalLook", alternateInputY);
+        animator.SetFloat("VerticalLook", inputY);
 
 
         if (Input.GetKeyDown(KeyCode.Space))
