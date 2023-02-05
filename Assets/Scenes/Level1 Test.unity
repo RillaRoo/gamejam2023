@@ -739,9 +739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333d9c8d7e3c9ef4f95ce3f60f1f2559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2d: {fileID: 0}
+  rb2d: {fileID: 1282613486}
   animator: {fileID: 0}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1182380089}
   bombSeed: {fileID: 0}
   bombAmount: 0
 --- !u!212 &1282613483
@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 1290324205}
   - component: {fileID: 1290324207}
   - component: {fileID: 1290324206}
+  - component: {fileID: 1290324208}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Ant
@@ -966,7 +967,7 @@ SpriteRenderer:
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 0b464ed2c9c1c7d4888c0fc4a374d055, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 10.24, y: 10.24}
@@ -983,7 +984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290324200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.91, y: -3.49, z: 0}
+  m_LocalPosition: {x: 4.26, y: -3.48, z: 0}
   m_LocalScale: {x: 0.1936, y: 0.1936, z: 0.1936}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b7b62df4f9420049b152e48f6426890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mAnimator: {fileID: 1290324208}
   playerheath: {fileID: 0}
   damage: -1
   enemyHealth: 0
@@ -1052,6 +1054,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+--- !u!95 &1290324208
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290324200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2c40886fb4199e4cb61a80a016fe161, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1513451457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,7 +1236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853924658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.72, y: 1.91, z: 0}
+  m_LocalPosition: {x: 4.42, y: -2.49, z: 0}
   m_LocalScale: {x: 6.8885, y: 2.7827, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1236,6 +1257,7 @@ GameObject:
   - component: {fileID: 1981759649}
   - component: {fileID: 1981759655}
   - component: {fileID: 1981759652}
+  - component: {fileID: 1981759656}
   m_Layer: 0
   m_Name: Mole
   m_TagString: Mole
@@ -1323,12 +1345,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rgd1: {fileID: 1981759651}
   arvore: {fileID: 1079415496264019866, guid: 15fe80e937c852f41890909d24efd6a6, type: 3}
+  arvoreVent: {fileID: 7339890374847071243, guid: 0b255641d078eca42afdd5b43320d9d0, type: 3}
   point: {fileID: 2020569313}
   bullet: {fileID: 2792624915634170155, guid: c1532acde02d59f41b0367fcbea2ca2d, type: 3}
   firePoint: {fileID: 1732481105}
   firepointUp: {fileID: 1513451458}
   firepointDown: {fileID: 2053711732}
   playerbottom: {fileID: 1981759655}
+  Manimator: {fileID: 1981759649}
   canClimb: 0
 --- !u!212 &1981759653
 SpriteRenderer:
@@ -1369,7 +1393,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b884870e2df4ddf49a47bd9a8d694f5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1389,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981759648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.42, y: -3.34, z: 0}
+  m_LocalPosition: {x: -6.71, y: 1.21, z: 0}
   m_LocalScale: {x: 0.17295, y: 0.17295, z: 0.17295}
   m_Children:
   - {fileID: 2020569313}
@@ -1418,6 +1442,21 @@ MonoBehaviour:
   moleSprite: {fileID: 0}
   bombAmount: 0
   dir: -1
+  lastDir: 0
+--- !u!114 &1981759656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981759648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451663fcfc89c38468dbcfaa50229b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  MaxHealth: 3
 --- !u!1 &2020569312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1481,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020569312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1052327, y: -3.5270317, z: -4.34899}
+  m_LocalPosition: {x: 5.81, y: -3.44, z: -4.34899}
   m_LocalScale: {x: 5.7820177, y: 5.7820177, z: 5.7820177}
   m_Children: []
   m_Father: {fileID: 1981759654}
