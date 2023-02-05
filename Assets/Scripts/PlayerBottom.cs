@@ -13,7 +13,7 @@ public class PlayerBottom : MonoBehaviour
     [SerializeField] SpriteRenderer moleSprite;
     public int bombAmount = 0;
     public float dir;
-    private float lastDir;
+    public float lastDir;
     bool goingtoFlip;
     bool originalOrientation;
     Vector3 lastPos;

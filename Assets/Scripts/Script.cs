@@ -18,7 +18,8 @@ public class Script : MonoBehaviour
     float damage = -2;
     public  bool canClimb = false;
     float bulletSpeed = 50;
-    
+    bool flag = true;
+    float lastDir = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +29,8 @@ public class Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float lastDir = -1;
-
+        
+        
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -52,13 +53,21 @@ public class Script : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (playerbottom.dir != 0)
-            { 
-                lastDir = playerbottom.dir;
+            
+            if(playerbottom.dir != 0)
+            {
+                fire(playerbottom.dir);
+            }
+            else if(playerbottom.dir == 0)
+            {
                 fire(lastDir);
             }
+
+
             
-            fire(lastDir);
+
+
+
         }
        
     }
@@ -87,29 +96,31 @@ public class Script : MonoBehaviour
     public void fire(float lastDir)
     {
         GameObject bullett = Instantiate(bullet, firePoint.position, Quaternion.identity);
-        if (playerbottom.dir == -1)
+        if (playerbottom.dir == -1)//certo
         {
             bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
         }
-        else if (playerbottom.dir == 0 && lastDir == 1)
-        {
-            bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
-        }
-        else if(playerbottom.dir == 1 )
+        else if (playerbottom.lastDir == 1)
         {
             bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
         }
-        else if(lastDir == -1)
+        else if(playerbottom.dir == 1 )//certo
         {
-                bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
+            bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else if(playerbottom.lastDir == -1)
+        {
+            Debug.Log("Acertou");
+            bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
         }
         else if(lastDir == 1)
         {
-                bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
+            bullett.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, bullett.GetComponent<Rigidbody2D>().velocity.y);
         }
-        
-        
-        
+
+       
+
+
     }
     public void fireUp()
     {

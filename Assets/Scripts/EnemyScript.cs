@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-   
+    [SerializeField] Animator mAnimator;
+    
     public PlayerScript playerheath;
     public int damage = -1;
     public float enemyHealth;
@@ -30,8 +31,8 @@ public class EnemyScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Mole")
         {
-
-            //collision.gameObject.GetComponent<PlayerBottom>().TakeDamage(damage);
+            mAnimator.SetTrigger("ISatack");
+            collision.gameObject.GetComponent<PlayerScript>().TakeDamage(damage);
         }
         
     }
